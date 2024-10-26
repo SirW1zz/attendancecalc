@@ -1,0 +1,79 @@
+/* General body styling to apply the font and background */
+body {
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font for the entire page */
+    background-image: url('file:///C:/Users/jerald/Desktop/HiveNight/Images/background.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    height: 100vh; /* Ensure the body takes full height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Centering the login container and adding styling */
+.login-container {
+    position: relative;
+    max-width: 280px; /* Adjusted width for a neater look */
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Reduced transparency */
+    border-radius: 10px;
+    overflow: hidden; /* Prevents the watermark from overflowing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for a cleaner look */
+    z-index: 2; /* Ensure the login container is above the watermark */
+}
+
+/* Styling the watermark behind the login container */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    width: 80%; /* Reduced size of watermark */
+    height: 80%; /* Reduced size of watermark */
+    background-image: url('file:///C:/Users/jerald/Desktop/HiveNight/Images/logo.jpeg'); /* Path to your logo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Adjust to fit the area */
+    opacity: 0.1; /* Set transparency for the watermark (darker) */
+    transform: translate(-50%, -50%); /* Center the watermark */
+    z-index: 1; /* Ensure it stays behind the content */
+}
+
+/* Styling for inputs */
+input[type="text"],
+input[type="password"] {
+    display: block;
+    width: 80%; /* Reduced width to make them smaller */
+    padding: 10px; /* Adjust padding for better touch */
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: relative;
+    z-index: 2; /* Ensure inputs are above the watermark */
+    margin-left: auto; /* Center the input field */
+    margin-right: auto; /* Center the input field */
+}
+
+/* Styling for the login button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 2; /* Ensure button is above the watermark */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Ensuring the message display is also above the watermark */
+#loginMessage {
+    z-index: 2; /* Ensure message is above the watermark */
+    position: relative; /* Positioning to stack properly */
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> <!-- Add this line -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" onkeydown="handleKey(event)">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" onkeydown="handleKey(event)">
+        
+        <button onclick="login()">Login</button>
+        
+        <div id="loginMessage"></div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

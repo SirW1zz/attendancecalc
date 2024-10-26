@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <link rel="stylesheet" href="stylehome.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Add custom styles here */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the start */
+            max-width: 1200px; /* Optional: limit the container width */
+            margin: auto; /* Center the container */
+            padding: 20px; /* Add padding */
+        }
+
+        .left {
+            flex: 1; /* Take up 1 part of the space */
+            padding: 10px; /* Optional padding */
+        }
+
+        .right {
+            flex: 1; /* Take up 1 part of the space */
+            padding: 10px; /* Optional padding */
+        }
+
+        #attendanceChart {
+            display: none; /* Initially hidden */
+        }
+
+        #attendanceMessage {
+            margin-top: 20px; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Attendance Calculator</h1>
+
+            <label for="subjectDropdown">Select Subject:</label>
+            <select id="subjectDropdown" onchange="showAttendance()"> <!-- Add onchange event -->
+                <option value="">-- Select Subject --</option>
+                <option value="DSA">DSA</option>
+                <option value="OOP">OOP</option>
+                <option value="CSP">CSP</option>
+                <option value="DMA">DMA</option>
+                <option value="CO">CO</option>
+                <option value="MINOR">MINOR</option>
+                <option value="EVS">EVS</option>
+                <option value="MENTORING">MENTORING</option>
+                <option value="OOP LAB">OOP LAB</option>
+                <option value="DS LAB">DS LAB</option>
+            </select>
+
+            <button onclick="showAttendance()">Show Attendance</button> <!-- You can keep this if you want a separate button -->
+
+            <div id="attendanceMessage"></div>
+        </div>
+
+        <div class="right">
+            <!-- Add canvas for the pie chart -->
+            <canvas id="attendanceChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    
+    <script src="script2.js"></script> <!-- Include your JavaScript file here -->
+</body>
+</html>
